@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Destructuring</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add function 
+            function foo() {
+                return [1, 2, 3];
+            }
+            function boo() {
+                return {x : 4,
+                        y : 5,
+                        z : 6
+                        };
+            }
+            let [a, b, c] = foo();
+            let {x:d, y:e, z:f} = boo();
+            console.log(a, b, c + "        " + d, e, f);
+
+            //Add object
+
+            let o1 = {a : 1, b : 2, c : 3};
+            let o2 = {};
+
+            ({a : o2.a, b : o2.b, c : o2.c} = o1);
+            console.log(o2.a , o2.b , o2.c);
+
+        </script>
+    </body>
+</html>
