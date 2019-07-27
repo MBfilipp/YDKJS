@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>spreadDestructuring</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add function
+            function foo([a, b, ...c], ...w) {
+                console.log(a, b, c, w);
+            }
+
+            let o1 = {x : 5, y : {x : 400, y : {z : 4000} } };
+            let o2 = {x, y} = o1;
+            console.log(o2.y.y.z);
+        </script>
+    </body>
+</html>
