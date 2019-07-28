@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Abbreviated Literals</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Abbreviated Literals
+            let a = 2, b = 3,
+                o = {
+                    a,
+                    b
+                };
+            console.log(o.a, o.b);
+
+            //Add function readXY
+
+            function readXY(o) {
+                return o.readxy;
+            }
+            readXY({ 
+                read : function read(x, y) {
+                    if(x < y) {
+                        return read(x, y);
+                    }
+                    console.log(x - y);
+                }
+            });
+
+        </script>
+    </body>
+</html>
