@@ -13,6 +13,13 @@
             let o1 = {x : 5, y : {x : 400, y : {z : 4000} } };
             let o2 = {x, y} = o1;
             console.log(o2.y.y.z);
+
+            //Add function with arguments
+
+            function fooSecond({ x = 10 } = {}, { y } = { y : 10 }) {
+                console.log(x, y);
+            }
+            fooSecond();
         </script>
     </body>
 </html>
