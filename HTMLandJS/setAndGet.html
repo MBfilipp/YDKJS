@@ -9,10 +9,14 @@
 
             let o = {
                 _id : 10,
-                get id() {return this._id++;},
-                set id(x) {this.id = x;}
+                get id() { return this._id++; },
+                set id(x) { this._id = x; }
             }
-            console.log(o._id, o.id, o._id, o.id = 10, o._id);
+            console.log(o._id);
+            o.id;
+            console.log(o._id);
+            o.id = 10;
+            console.log(o._id);
         </script>
     </body>
 </html>
