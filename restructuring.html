@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Restructuring</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add two obj.
+
+            let defaults = {
+                options : {
+                    remove : true,
+                    enable : false,
+                    instance : {}
+                },
+                log : {
+                    warn : true,
+                    error : true
+                }
+            } 
+            let config = {
+                options : {
+                    remove : false,
+                    instance : null
+                }
+            }
+            config.options = config.options || {};
+            config.log = config.log || {};
+            {
+                let {
+                    options : {
+                        remove = defaults.options.remove,
+                        enable = defaults.options.enable,
+                        instance = defaults.options.instance
+                    } = {},
+                    log : {
+                        warn = defaults.log.warn,
+                        error = defaults.log.error
+                    } = {}
+                } = config;
+
+                config = {
+                    options : {remove, enable, instance},
+                    log : {warn, error}
+                }
+            }
+        </script>
+    </body>
+</html>
