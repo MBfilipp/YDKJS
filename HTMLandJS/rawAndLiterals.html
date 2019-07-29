@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>`${Literals}`</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function rawStr(string) {
+                console.log(string);
+                console.log(string.raw);
+            }
+            rawStr`string\nstring`;
+
+            let o1 = {
+                name : "John"
+            }, o2 = {
+                surname : "Elton"
+            }
+            Object.setPrototypeOf(o2, o1);
+
+            let surname = o2.surname;
+            let name = o2.name;
+            let fullname = `${surname} ${name} `;
+            console.log(fullname);
+        </script>
+    </body>
+</html>
