@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Prototype</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add a new object(true)
+
+            let o1 = {
+                turn : false,
+                enable : true
+            }
+            let o2 = {
+                gigabytes : 50,
+                turn : true
+            }
+            Object.setPrototypeOf(o2, o1);
+            console.log(o2.enable);
+
+            //Add a new object(false)
+            {
+                let o1 = {
+                    turn : false,
+                    enable : true
+                }
+                let o2 = {
+                    gigabytes : 50,
+                    turn : true,
+                    __proto__ : o1
+                }
+                console.log(o2.enable); 
+            }
+            
+        </script>
+    </body>
+</html>
