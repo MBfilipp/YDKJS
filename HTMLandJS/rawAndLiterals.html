@@ -6,23 +6,39 @@
     </head>
     <body>
         <script type="text/javascript">
-            function rawStr(string) {
-                console.log(string);
-                console.log(string.raw);
-            }
-            rawStr`string\nstring`;
+            // function rawStr(string) {
+            //     console.log(string);
+            //     console.log(string.raw);
+            // }
+            // rawStr`string\nstring`;
 
-            let o1 = {
-                name : "John"
-            }, o2 = {
-                surname : "Elton"
-            }
-            Object.setPrototypeOf(o2, o1);
+            // //
 
-            let surname = o2.surname;
-            let name = o2.name;
-            let fullname = `${surname} ${name} `;
-            console.log(fullname);
+            // let o1 = {
+            //     name : "John"
+            // }, o2 = {
+            //     surname : "Elton"
+            // }
+            // Object.setPrototypeOf(o2, o1);
+
+            // let surname = o2.surname;
+            // let name = o2.name;
+            // let fullname = `${surname} ${name} `;
+            // console.log(fullname);
+
+            //!!!!ERROR!!!!
+
+            addDollar = stringArg => {
+                let stringSlice = stringArg.split(" ");
+                mapArray = stringSlice.map(currentValue => {
+                    if(!isNaN(currentValue)) {
+                        return `${currentValue}$`
+                    }else return currentValue;
+                });
+                console.log(mapArray.join(" "));
+            }
+            let string = "23 One dollars";
+            addDollar(string);
         </script>
     </body>
 </html>
