@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Symbol</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           let sym = Symbol("Это вам не нужно знать..."),
+                     symToString = sym.toString();
+           console.log(`${symToString}`);
+
+           //new
+
+           function money() {
+               if(arguments.length) {return 0} else return 1;
+           }
+           let functionMoney = Symbol(money());
+           console.log(functionMoney.toString());
+
+           //new
+           let error = () => {
+               throw new Error("Fatal Error");
+           }
+
+           let fatalError = Symbol(error());
+
+           function myError() {
+               return fatalError;
+           }
+
+           myError();
+
+        </script>
+    </body>
+</html>
