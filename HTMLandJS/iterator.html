@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Iterator</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // let obj = new Map();
+            // obj.set({a : 1});
+            // obj.set({b : 2});
+            // obj.set({c : 3});
+            
+            // let itObj = obj.entries();
+            // console.log(itObj.next().value);
+            // console.log(itObj.next());
+            // console.log(itObj.next());
+            // console.log(itObj.next());
+
+            /////////////////////////
+
+            //Fib
+
+            let Fib = {
+                [Symbol.iterator]() {
+                    let n1 = 1, n2 = 1;
+                    return { 
+                        [Symbol.iterator]() {
+                            return this; 
+                        },
+                        next() {
+                            let current = n2;
+                            n2 = n1;
+                            n1 = n1 + current;
+                            return { value : current, done : false }
+                        },
+                        return(v) {
+                            console.log("Lost");
+                            return { value : v, done : true }
+                        }
+                    }               
+                }
+            }
+            for(v of Fib) {
+                console.log(v);
+                if(v > 50) break;
+            }
+
+            //func
+
+            let tasks = {
+                
+                [Symbol.iterator]() {
+                    let steps = this.actions.slice();
+                    return { 
+                        [Symbol.iterator]() { return this; },
+                        next(...args) {
+                            if(steps.length > 0) {
+                               let res = steps.shift()(...args);
+                                return { value : res, done : false}; 
+                            }else {
+                                return { done : true };
+                            }
+                        },
+                        return(v) {
+                            steps.length = 0;
+                            return { value : v, done : true};
+                        }
+                    };
+                },
+                actions : []
+            };
+            tasks.actions.push(
+                function step1(a, b) {
+                    return a + b;
+                }
+            );
+            let it = tasks[Symbol.iterator]();
+            it.next(5, 5);
+
+        </script>
+    </body>
+</html>
