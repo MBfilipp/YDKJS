@@ -1,0 +1,27 @@
+<header>
+    <script type="text/javascript">
+        class Game {
+            constructor(first, second) {
+                this.person = first;
+                this.friend = second;
+            }
+            consoleLog() {
+                return this.friend + " " + this.person;
+            }
+        }
+
+        class Attack extends Game {
+            constructor(person, friend, fHealth, sHealth) {
+                super(person, friend);
+                this.personHealth = fHealth;
+                this.friendHealth = sHealth;
+            }
+            allConsoleLog() {
+                console.log(super.consoleLog() + " " + this.personHealth + " " + this.friendHealth);
+            }
+        }
+
+        let attack = new Attack("Jack", "Alex", 5, 8);
+        attack.allConsoleLog();     
+    </script>
+</header>
