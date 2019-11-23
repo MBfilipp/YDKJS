@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Olymp</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        // Задача с шифром
+        // let alpha = [
+        //     [' ', ' ', ' ', ' ', ' ', ' '],
+        //     [' ', 'A', 'B', 'C', 'D', 'E'],
+        //     [' ', 'F', 'G', 'H', 'I', 'K'],
+        //     [' ', 'L', 'M', 'N', 'O', 'P'],
+        //     [' ', 'Q', 'R', 'S', 'T', 'U'],
+        //     [' ', 'V', 'W', 'X', 'Y', 'Z']
+        // ];
+
+        // function transpilation() {
+        //     string = "";
+        //     let n, f, it, i, k;
+        //     n = prompt("Введите количество строк", '');
+        //     for(i = 0; i < n; i++) {
+        //         f = prompt("Введите количество букв", '');
+        //         for(k = 0; k < f; k++) {
+        //             it = prompt("Введите зашифрованное число", '');
+        //             string += alpha[it[1]][it[0]];
+        //         }
+        //         string += "\n"
+        //     }
+        // console.log(string);
+        // };
+        
+        //Задача с собакой 13 стр
+
+        function daysOfDayBorn() {
+            let N, S, K, m = 0;
+            N = +prompt("Введите количество рыб", 20);
+            S = +prompt("Введите на сколько больше рыб ловит собака, чем в предыдущий день", 2);
+            K = +prompt("Введите количество рыб которое собака ловит в первый день", 3);
+
+            for(let i = 1; K < N;i++) {
+                if((K + S * i ) % 2 != 0) {
+                    z = ((K + S * i) + 1)/2;
+                } else z = (K + S * i)/2;
+                K += z;
+                console.log(K)
+                m += 1;
+            };
+
+            console.log(m);
+        }
+
+        daysOfDayBorn()
+
+        </script>
+    </body>
+</html>

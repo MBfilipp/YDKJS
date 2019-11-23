@@ -7,25 +7,31 @@
     <body>
         <script type="text/javascript">
             
-            // function _Hello(name) {
-            //     function greeting() {
-            //         console.log("Hello " + name);
-            //     }
-            //     return {
-            //         greeting : greeting
-            //     };
-            // }
-            // let me = _Hello("Kyle");
-            // me.greeting();
+            let alpha = [
+[' ', ' ', ' ', ' ', ' ', ' '],
+[' ', 'A', 'B', 'C', 'D', 'E'],
+[' ', 'F', 'G', 'H', 'I', 'K'],
+[' ', 'L', 'M', 'N', 'O', 'P'],
+[' ', 'Q', 'R', 'S', 'T', 'U'],
+[' ', 'V', 'W', 'X', 'Y', 'Z']
+];
 
-            let me = (function Hello(name) {
-                function  greeting() {
-                    console.log("Hello " + name);
-                }
-                return {
-                    greeting : greeting
-                };
-            }("Kyle")).greeting();
+function transpilation() {
+string = "";
+let n, f, it;
+n = prompt("Введите количество строк", '');
+for(let i = 0; i < n; i++) {
+f = propmt("Введите количество букв", '');
+for(let k = 0; k < f; k++) {
+it = propmt("Введите зашифрованное число", '');
+string += alpha[it[0], it[1]];
+}
+string += "/n"
+}
+console.log(string);
+};
+transpilation()
+
 
         </script>
     </body>
